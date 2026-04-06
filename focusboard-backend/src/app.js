@@ -9,6 +9,7 @@ const authRoutes = require('./routes/authRoutes');
 const taskRoutes = require('./routes/taskRoutes');
 const categoryRoutes = require('./routes/categoryRoutes');
 const planRoutes = require('./routes/planRoutes');
+const aiRoutes = require('./routes/aiRoutes');
 
 const { notFound, errorHandler } = require('./middleware/errorMiddleware');
 const { apiLimiter } = require('./middleware/rateLimiter')
@@ -31,6 +32,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/tasks', taskRoutes);
 app.use('/api/categories', categoryRoutes);
 app.use('/api/plans', planRoutes);
+app.use('/api/ai', aiRoutes);
 
 // Error handling - must be last
 app.use(notFound);
