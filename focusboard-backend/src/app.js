@@ -5,7 +5,10 @@ const morgan = require('morgan');
 
 require('./config/db');
 
-const authRoutes = require('./routes/authRoutes')
+const authRoutes = require('./routes/authRoutes');
+const taskRoutes = require('./routes/taskRoutes');
+const categoryRoutes = require('./routes/categoryRoutes');
+const planRoutes = require('./routes/planRoutes');
 
 const app = express();
 
@@ -19,5 +22,8 @@ app.get('/health', (req, res) => {
 });
 
 app.use('/api/auth', authRoutes);
+app.use('/api/tasks', taskRoutes);
+app.use('/api/categories', categoryRoutes);
+app.use('/api/plans', planRoutes);
 
 module.exports = app;
